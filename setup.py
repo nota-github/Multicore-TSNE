@@ -52,10 +52,10 @@ class CMakeBuild(build_ext):
         shutil.rmtree(BUILD_TEMP, ignore_errors=True)
         os.makedirs(BUILD_TEMP)
 
-        if version.parse(self.get_cmake_version()) < version.parse("3.22.0"):
-            cmake_passthru_flag = "--"
-        else:
-            cmake_passthru_flag = "-S"
+        #if version.parse(self.get_cmake_version()) < version.parse("3.22.0"):
+        #    cmake_passthru_flag = "--"
+        #else:
+        cmake_passthru_flag = "-S"
 
         # Run cmake
         build_type = 'Debug' if self.debug else 'Release'
